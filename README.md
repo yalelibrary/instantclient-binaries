@@ -1,5 +1,16 @@
 # InstantClient Binaries
 
+## Quickstart for Dockerfile
+Download the script and install the correct binaries using curl (required curl):
+```
+RUN curl -s https://raw.githubusercontent.com/yalelibrary/instantclient-binaries/main/scripts/install-instantclient.sh | /bin/bash -s
+```
+
+Setup the environment variable for the gem:
+```
+ENV LD_LIBRARY_PATH=/opt/oracle/instantclient
+```
+
 ## Overview
 This is a repository with the binaries for InstantClient.
 These binaries are needed for projects which need to build native clients for Voyager or other similar databases.
@@ -24,3 +35,4 @@ The binaries can be installed by cloning the correct branch based on the archite
 The sym-link makes it easier to point to the directory using LD_LIBRARY_PATH so that the ori-gem can find them and build.
 
 An example script can be found here: `scripts/install-instantclient.sh`
+
